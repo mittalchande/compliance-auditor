@@ -1,4 +1,6 @@
 Compliance Auditor: AI-Powered 3-Pass Reflection Pipeline
+
+
 A high-precision FinTech tool designed to extract regulatory obligations and risk multipliers from dense legal documents. Unlike standard summarizers, this tool uses an Agentic Reflection Architecture to ensure no financial penalties (like "per account" or "per day" fines) are missed.
 
 🚀 The Problem
