@@ -1,11 +1,16 @@
 Compliance Auditor: AI-Powered 3-Pass Reflection Pipeline
 
-![Compliance Auditor Dashboard](./app-demo.jpeg)
-
 A high-precision FinTech tool designed to extract regulatory obligations and risk multipliers from dense legal documents. Unlike standard summarizers, this tool uses an Agentic Reflection Architecture to ensure no financial penalties (like "per account" or "per day" fines) are missed.
 
-🚀 The Problem
-Standard LLMs often "hallucinate" or generalize dense legal text, losing critical "hidden multipliers" during summarization (e.g., turning a "$25k per account" fine into a "heavy fine").
+🚀 The Problem: Why Compliance Auditor?
+
+| The Problem | The Solution |
+| :--- | :--- |
+| **Complex Regulatory Jargon:** Critical changes are often buried in dense, 50-page legal notices. | **Automated Extraction:** Instantly parses raw text to isolate core obligations and deadlines. |
+| **High Financial Risk:** Missing a "per account" multiplier can lead to catastrophic company losses. | **Financial Triage:** Specifically flags "Critical" severity penalties and recurrent liability. |
+| **AI Summarization Errors:** Standard LLMs often hallucinate or miss subtle conflicts between new and old rules. | **3-Pass Reflection Pipeline:** Uses an internal "Self-Audit" pass to catch missed details or hallucinations. |
+| **Ambiguous Deadlines:** Notices often mention "End of Q1" without specifying timezones. | **Precision Gap Detection:** Pass 2 flags ambiguous terms, recommending points for human clarification. |
+| **Manual Auditing Fatigue:** Legal teams spend hours cross-referencing, leading to human oversight. | **Verified Compliance Reports:** Generates structured Executive Summaries with actionable checkboxes. |
 
 🧠 The Solution: 3-Pass Reflection Logic
 This project implements a three-stage cognitive pipeline:
@@ -33,3 +38,5 @@ Severity Pulse: Visual "Critical" alerts for high-impact financial risks using C
 Domain Guardrails: Rejects general knowledge queries (e.g., "What is the capital of France?") to maintain professional utility and persona integrity.
 
 Safety Disclaimer: Built-in transparency regarding missing information to ensure a "Human-in-the-Loop" workflow.
+
+![Compliance Auditor Dashboard](./app-demo.jpeg)
