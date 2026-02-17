@@ -17,27 +17,55 @@ A high-precision FinTech tool designed to extract regulatory obligations and ris
 🧠 The Solution: 3-Pass Reflection Logic
 This project implements a three-stage cognitive pipeline:
 
-Pass 1: Extraction (GPT-4o-mini) - Rapidly drafts initial compliance points with a "Scope Guard" to reject non-regulatory content.
+```mermaid
+graph TD
+    A[Raw Legal Text] --> B[Pass 1: Extraction Agent]
+    B --> C[Pass 2: Senior Auditor Critique]
+    C --> D[Pass 3: Final Synthesis]
+    D --> E{Structured JSON Output}
+    E --> F[Severity: Critical/High/Med]
+```
 
-Pass 2: Audit (GPT-4o) - A "Senior Auditor" agent compares the draft against the original source to find missed multipliers, deadlines, or rule overrides.
+**Pass 1:** Extraction (GPT-4o-mini) - Rapidly drafts initial compliance points with a "Scope Guard" to reject non-regulatory content.
 
-Pass 3: Synthesis (GPT-4o + Structured Outputs) - Combines the draft and critique into a final, high-precision JSON report with automated Severity Scoring (Critical, High, Medium, Low).
+**Pass 2:** Audit (GPT-4o) - A "Senior Auditor" agent compares the draft against the original source to find missed multipliers, deadlines, or rule overrides.
 
-🛠️ Tech Stack
-Frontend: React, TypeScript, CSS3 (Animations & Flexbox)
+**Pass 3:** Synthesis (GPT-4o + Structured Outputs) - Combines the draft and critique into a final, high-precision JSON report with automated Severity Scoring (Critical, High, Medium, Low).
 
-Backend: FastAPI, Python, Pydantic (Structured Data Validation)
+**Real-World Example Output**
+When processing a complex notice regarding 31 CFR Part 1010, the pipeline generates this structured response:
 
-AI: OpenAI GPT-4o API, Beta Chat Completions Parse (for strict JSON schema adherence)
+```json
+{
+  "summary": "The notice amends 31 CFR Part 1010, enforcing a reduced KYC verification window.",
+  "key_risks": [
+    {
+      "description": "Failure to update systems by Q1 results in a $25,000 fine per account.",
+      "severity": "CRITICAL"
+    }
+  ],
+  "obligations": [
+    "Shorten KYC verification period to 7 business days.",
+    "Conduct monthly Product Suitability Reviews."
+  ],
+  "missing_info": "The notice does not specify the timezone for the Q1 deadline."
+}
+```
+🛠️ **Tech Stack**
+**Frontend:** React, TypeScript, CSS3 (Animations & Flexbox)
 
-Tools: Axios, Dotenv
+**Backend:** FastAPI, Python, Pydantic (Structured Data Validation)
 
-✨ Key Features
-Agentic Critique: The AI self-corrects before showing the user the final result.
+**AI:** OpenAI GPT-4o API, Beta Chat Completions Parse (for strict JSON schema adherence)
 
-Severity Pulse: Visual "Critical" alerts for high-impact financial risks using CSS keyframes.
+**Tools:** Axios, Dotenv
 
-Domain Guardrails: Rejects general knowledge queries (e.g., "What is the capital of France?") to maintain professional utility and persona integrity.
+✨ **Key Features**
+**Agentic Critique:** The AI self-corrects before showing the user the final result.
 
-Safety Disclaimer: Built-in transparency regarding missing information to ensure a "Human-in-the-Loop" workflow.
+**Severity Pulse:** Visual "Critical" alerts for high-impact financial risks using CSS keyframes.
+
+**Domain Guardrails:** Rejects general knowledge queries (e.g., "What is the capital of France?") to maintain professional utility and persona integrity.
+
+**Safety Disclaimer:** Built-in transparency regarding missing information to ensure a "Human-in-the-Loop" workflow.
 
